@@ -34,7 +34,7 @@ a,p,h1,h2 {
 	line-height: 1.7;
 }
 .text-big{
-	font-size: clamp(2.25rem, 2.25rem + 0.5156vw, 3.75rem);
+	font-size: clamp(2.25rem, 2.25rem + 1vw, 3.75rem);
     line-height: 4.2rem;
 }
 .pa{line-height: 4.0rem;
