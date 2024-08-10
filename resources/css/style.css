@@ -100,9 +100,10 @@ nav > div {
 	gap: 0px 0.6rem;
 }
 .langToggle{
-	width: calc(3em + 4vw);
-	cursor: pointer;
-	z-index: 100; 
+	width: calc(6em + 5vw);
+    cursor: pointer;
+    z-index: 100;
+    justify-self: flex-end;
 }
 .par{
 	margin-bottom:20px;
