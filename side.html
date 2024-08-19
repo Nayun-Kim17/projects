@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="icon" type="image/x-icon" href="./resources/img/favicon.png">
+	<meta name="Description" content="Nayun Kim is motion designer based in South Korea. I focus on to connect theme to personal experience.">
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	 <meta property="oimage" content="./resources/img/metaimg.jpg">
+
+
+	<title>Nayun Kim</title>
+
+	
+	<script>
+	  (function(d) {
+	    var config = {
+	      kitId: 'vnf1aov',
+	      scriptTimeout: 3000,
+	      async: true
+	    },
+	    h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+	  })(document);
+	</script>
+	<link href="https://cdn.jsdelivr.net/gh/sun-typeface/SUIT@2/fonts/variable/woff2/SUIT-Variable.css" rel="stylesheet">
+	<link rel="stylesheet" href="./resources/css/style.css">
+	<link rel="stylesheet" href="./resources/css/font.css">
+	<link rel="stylesheet" href="./resources/css/img.css">
+	<link rel="stylesheet" href="./resources/css/side.css">
+
+</head>
+<body id="body">
+	<nav id="navHead" data-lenis-prevent-wheel>
+		<div class="wrapper flex">
+				<div class="home_btn">
+					<a href="" style="line-height:0;">
+						<canvas id="logo" class="logo">
+						</canvas>
+					</a>
+				</div>
+				<div class="menu_btn flex">
+					<div>
+						<a href="./about.htrml">About</a>
+					</div>
+					<div>
+						<a href="./project.html">Project</a>
+					</div>
+					<div>
+						<a href="./side.html">Side</a>
+					</div>
+				</div>
+		</div>
+	</nav>
+
+
+	<div id="filterContainer">
+		<button class="btn active" onclick="filterSelection('all'); masonryLayout();"><p>All</p></button>
+		<button class="btn" onclick="filterSelection('print'); masonryLayout();"><p>Print</p></button>
+		<button class="btn" onclick="filterSelection('motion'); masonryLayout();"><p>Motion</p></button>
+		<button class="btn"onclick="filterSelection('illustration'); masonryLayout();"><p>Illustration</p></button>
+		<button class="btn" onclick="filterSelection('web'); masonryLayout();"><p>Web</p></button>
+		<button class="btn" onclick="filterSelection('graphics');masonryLayout();"><p>Graphics</p></button>
+	</div>
+
+
+	<div class="wrap">
+    <div class="masonry-item print">
+        <a href="./108.html">
+        	<div class="pseudo-img">
+	        	<img src="./resources/img/108.webp">
+	        	<p class="text-small gray">Certificate Design</p>
+	        	<p class="bold text-mid title">상림탁구클럽</p>
+        	</div>
+    	</a>
+    </div>
+    <div class="masonry-item graphics">
+        <a>
+        	<div class="pseudo-img">
+	        	<img src="./resources/img/1.webp">
+	        	<p class="text-small gray">프로젝트 종류</p>
+	        	<p class="bold text-mid title">프로젝트 제목</p>
+        	</div>
+    	</a>
+    </div>
+    <div class="masonry-item illustrations">
+        <a>
+        	<div class="pseudo-img">
+	        	<img src="./resources/img/1.webp">
+	        	<p class="text-small gray">프로젝트 종류</p>
+	        	<p class="bold text-mid title">프로젝트 제목</p>
+        	</div>
+    	</a>
+    </div>
+   
+</div>
+<footer>
+		<div class="footer-Wrap section">
+			<div>
+				<p class="text-big name">KIM NAYUN</p>
+			</div>
+			<p class="text-mid line1-5">Seoul, South Korea</p>
+			<div class="grid">
+				<div class="col-1">
+					<p class="text-mid personalInfo">pibicheese@gmail.com</p>
+				</div>
+				<div class="col-2"></div>
+				<div class="sns">
+					<p></p>
+					<a target="_blank" href="https://www.instagram.com/junoryun/" class="text-mid" style="width:`100%">Instagram</a>
+					<a target="_blank" href="https://www.behance.net/nayunkim" class="text-mid" style="width:`100%">Behance</a>
+				</div>
+			</div>
+			<p class="copywrite">©2024 KIM NAYUN, All rights reserved.</p>
+		</div>
+	</footer>
+<script src="./resources/js/filter.js"></script>
+<script type="text/javascript">
+	function masonryLayout() {
+    const masonryContainerStyle = getComputedStyle(
+        document.querySelector(".wrap")
+    );
+    const columnGap = parseInt(
+        masonryContainerStyle.getPropertyValue("column-gap")
+    );
+    const autoRows = parseInt(
+        masonryContainerStyle.getPropertyValue("grid-auto-rows")
+    );
+
+    document.querySelectorAll(".masonry-item").forEach((elt) => {
+        elt.style.gridRowEnd = `span ${Math.ceil(
+            elt.querySelector(".pseudo-img").scrollHeight / autoRows +
+                columnGap / autoRows
+        )}`;
+    });
+}
+
+masonryLayout();
+window.addEventListener("resize", masonryLayout);
+</script>
+<script src="https://unpkg.com/@rive-app/canvas@2.9.1"></script>
+	<script src="https://unpkg.com/lenis@1.1.9/dist/lenis.min.js"></script> 
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script type="text/javascript" src="./resources/js/detail.js"></script>
+	<script>
+      const r = new rive.Rive({
+        src: "./logo.riv",
+        canvas: document.getElementById("logo"),
+        autoplay: true,
+        stateMachines: "State Machine 1",
+        onLoad: () => {
+          r.resizeDrawingSurfaceToCanvas();
+        },
+		});
+	</script>
+	
+</body>
+</html>
