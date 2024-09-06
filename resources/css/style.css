@@ -160,13 +160,13 @@ ol li{
 	padding-bottom:calc(20px + 0.75rem);
 	padding-top:0;
 }
+.footer-Wrap > div:last-child{
+	padding-left:calc(20px + 0.75rem);
+}
 
 .footer_Interactive{
-	position: relative;
-	top:10vh;
-	right:-45vw;
 	width:40vw;
-	height: 30vh;
+	height: 50vh;
 	background-color: gray;
 	z-index: 50;
 }
