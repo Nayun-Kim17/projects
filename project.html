@@ -93,11 +93,10 @@
 				<p class="text-mid line1-5">Seoul, South Korea</p>
 				<p class="text-mid personalInfo">pibicheese@gmail.com</p>
 			</div>
-			<div class="footer_Interactive" style="flex:4;">
-					<canvas id="footer_Img" class="footer_Img"></canvas>
+			<div class="footer_Interactive" id="footer_Interactive">
+					<canvas width: 500; height: 500; id="footer_Img" class="footer_Img"></canvas>
 			</div>
-			<div class="sns" style="flex:1;display: inline-block;
-  align-self: flex-end;">
+			<div class="sns">
 					<p><a target="_blank" href="https://www.instagram.com/junoryun/" class="text-mid" style="width:`100%">Instagram</a></p>
 					<p><a target="_blank" href="https://www.behance.net/nayunkim" class="text-mid" style="width:`100%">Behance</a></p>
 			</div>
@@ -107,6 +106,15 @@
 		<p class="copywrite">©2024 KIM NAYUN, All rights reserved.</p>
 		
 	</footer>
+	<script type="text/javascript">
+		const canvas = document.getElementById('footer_Img');
+    	const ctx = canvas.getContext('2d');
+    	 function resizeCanvas() {
+      const container = document.getElementById('footer_Interactive');
+      canvas.width = container.offsetWidth;
+      canvas.height = container.offsetHeight;
+}
+	</script>
 <script src="./resources/js/filter.js"></script>
 
 <script src="https://unpkg.com/@rive-app/canvas@2.9.1"></script>
