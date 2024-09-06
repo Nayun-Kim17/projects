@@ -158,6 +158,15 @@ ol li{
 /* 푸터 footer */
 .footer-Wrap > div{
 	padding-bottom:calc(20px + 0.75rem);
+	padding-top:0;
 }
 
-
+.footer_Interactive{
+	position: relative;
+	top:10vh;
+	right:-45vw;
+	width:40vw;
+	height: 30vh;
+	background-color: gray;
+	z-index: 50;
+}
