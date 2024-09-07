@@ -164,7 +164,7 @@
 	const moveCursor = (e) => {
 			const { pageX, pageY } = e;
 			const vwCalc = (6 * window.innerWidth) / 100;
-			cursorRiv.style.transform = `translate3d(${(pageX - vwCalc)}px, ${(pageY - 150)}px, 0)`;
+			cursorRiv.style.transform = `translate3d(${(pageX - vwCalc)}px, ${(pageY - (vwCalc / 2))}px, 0)`;
 		}
 	window.addEventListener('mousemove', moveCursor);
 	</script>
