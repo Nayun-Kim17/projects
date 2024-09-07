@@ -162,9 +162,8 @@
 		const cursorRiv = document.getElementById('com');
 
 	const moveCursor = (e) => {
-			const mouseY = e.clientY;
-			const mouseX = e.clientX;
-			cursorRiv.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
+			const { pageX, pageY } = e;
+			cursorRiv.style.transform = `translate3d(${pageX}px, ${pageY}px, 0)`;
 		}
 	window.addEventListener('mousemove', moveCursor);
 	</script>
