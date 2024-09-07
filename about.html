@@ -55,7 +55,7 @@
 		</div>
 	</nav>
 
-	<div id="com" class="com">
+	<div id="com" class="com">/
 			<canvas width="400" height="200" id="coming" class="coming"></canvas>
 	</div>
 	
@@ -160,9 +160,11 @@
 		
 		const loading = document.getElementById('loading');
 		const cursorRiv = document.getElementById('com');
-		const moveCursor = (e) => {
+
+	const moveCursor = (e) => {
 			const mouseY = e.clientY;
 			const mouseX = e.clientX;
+			cursorRiv.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
 		}
 	window.addEventListener('mousemove', moveCursor);
 	</script>
