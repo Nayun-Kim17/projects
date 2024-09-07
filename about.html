@@ -26,7 +26,10 @@
 	<link rel="stylesheet" href="./resources/css/font.css">
 	<link rel="stylesheet" href="./resources/css/img.css">
 	<link rel="stylesheet" href="./resources/css/project.css">
-	<style type="text/css">#com {}</style>
+	<style type="text/css">
+	#com {}
+	.coming {width:150px; height: auto;}
+	</style>
 
 </head>
 <body id="body">
@@ -39,7 +42,7 @@
 					</a>
 				</div>
 				<div class="menu_btn flex">
-					<div class="loading">
+					<div id="loading">
 						<a href="./about.htrml">About</a>
 					</div>
 					<div>
@@ -53,8 +56,8 @@
 	</nav>
 
 	<div id="com">
-			<canvas id="coming" class="coming"></canvas>
-	\</div>
+			<canvas width="20" height="10" id="coming" class="coming"></canvas>
+	/</div>
 	
 
 	
@@ -154,7 +157,7 @@
   
 	</script>
 	<script>	
-		const loading = document.querySelector('loading');
+		const loading = document.getElementById('loading');
 		const cursorRiv = document.getElementById('com');
 		const moveCursor = (e) => {
 			const mouseY = e.clientY;
@@ -163,7 +166,7 @@
 
 		}
 
-		window.addEventListener('mousemove', moveCursor);
+		loading.addEventListener('mousemove', moveCursor);
 	</script>
 
 	
