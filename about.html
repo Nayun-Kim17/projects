@@ -43,7 +43,7 @@
 				</div>
 				<div class="menu_btn flex">
 					<div id="loading">
-						<a href="./about.html">About</a>
+						<a>About</a>
 					</div>
 					<div>
 						<a href="./project.html">Project</a>
@@ -165,8 +165,17 @@
 			const { pageX, pageY } = e;
 			const vwCalc = (6 * window.innerWidth) / 100;
 			cursorRiv.style.transform = `translate3d(${(pageX - vwCalc)}px, ${(pageY - (vwCalc / 2))}px, 0)`;
+
 		}
-	window.addEventListener('mousemove', moveCursor);
+	function detectBlock(){
+		if (loading.matches(':hover')) {
+				cursorRiv.style.display = "block";
+			} else {
+				cursorRiv.style.display = "none";
+			}
+	}
+	window.addEventListener('mousemove',detectBlock);
+	loading.addEventListener('mousemove', moveCursor);
 	</script>
 
 	
