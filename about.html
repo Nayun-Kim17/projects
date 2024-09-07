@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="icon" type="image/x-icon" href="./resources/img/favicon.png">
+	<meta name="Description" content="Nayun Kim is motion designer based in South Korea. I focus on to connect theme to personal experience.">
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	 <meta property="oimage" content="./resources/img/metaimg.jpg">
+
+
+	<title>About Nayun Kim</title>
+
+	
+	<script>
+	  (function(d) {
+	    var config = {
+	      kitId: 'vnf1aov',
+	      scriptTimeout: 3000,
+	      async: true
+	    },
+	    h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+	  })(document);
+	</script>
+	<link href="https://cdn.jsdelivr.net/gh/sun-typeface/SUIT@2/fonts/variable/woff2/SUIT-Variable.css" rel="stylesheet">
+	<link rel="stylesheet" href="./resources/css/style.css">
+	<link rel="stylesheet" href="./resources/css/font.css">
+	<link rel="stylesheet" href="./resources/css/img.css">
+	<link rel="stylesheet" href="./resources/css/project.css">
+	<style type="text/css">#com {}</style>
+
+</head>
+<body id="body">
+	<nav id="navHead" data-lenis-prevent-wheel>
+		<div class="wrapper flex">
+				<div class="home_btn">
+					<a href="" style="line-height:0;">
+						<canvas id="logo" class="logo">
+						</canvas>
+					</a>
+				</div>
+				<div class="menu_btn flex">
+					<div class="loading">
+						<a href="./about.htrml">About</a>
+					</div>
+					<div>
+						<a href="./project.html">Project</a>
+					</div>
+					<div>
+						<a href="./side.html">Side</a>
+					</div>
+				</div>
+		</div>
+	</nav>
+
+	<div id="com">
+			<canvas id="coming" class="coming"></canvas>
+	\</div>
+	
+
+	
+
+	<footer>
+		<div class="footer-Wrap section flex">
+			<div style="flex:3;display: inline-block;
+  align-self: flex-start;">
+				<p class="text-big name">KIM NAYUN</p>
+				<p class="text-mid line1-5">Seoul, South Korea</p>
+				<p class="text-mid personalInfo">pibicheese@gmail.com</p>
+			</div>
+			<div class="footer_Interactive" id="footer_Interactive">
+					<canvas width="700" height="500" id="footer_Img" class="footer_Img"></canvas>
+			</div>
+			<div class="sns">
+					<p><a target="_blank" href="https://www.instagram.com/junoryun/" class="text-mid" style="width:`100%">Instagram</a></p>
+					<p><a target="_blank" href="https://www.behance.net/nayunkim" class="text-mid" style="width:`100%">Behance</a></p>
+			</div>
+		
+			
+		</div>
+		<p class="copywrite">©2024 KIM NAYUN, All rights reserved.</p>
+		
+	</footer>
+	<script type="text/javascript">
+		const canvas = document.getElementById('footer_Img');
+    	const ctx = canvas.getContext('2d');
+    	 function resizeCanvas() {
+      const container = document.getElementById('footer_Interactive');
+      canvas.width = container.offsetWidth;
+      canvas.height = container.offsetHeight;
+}
+	</script>
+<script src="./resources/js/filter.js"></script>
+
+<script src="https://unpkg.com/@rive-app/canvas@2.9.1"></script>
+	<script src="https://unpkg.com/lenis@1.1.9/dist/lenis.min.js"></script> 
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script type="text/javascript" src="./resources/js/detail.js"></script>
+	<script>
+      const r = new rive.Rive({
+        src: "./logo.riv",
+        canvas: document.getElementById("logo"),
+        autoplay: true,
+        stateMachines: "State Machine 1",
+        onLoad: () => {
+          r.resizeDrawingSurfaceToCanvas();
+        },
+		});
+
+      const q = new rive.Rive({
+        src: "./footer.riv",
+        canvas: document.getElementById("footer_Img"),
+        autoplay: true,
+        stateMachines: "State Machine 1",
+        onLoad: () => {
+          q.resizeDrawingSurfaceToCanvas();
+        },
+		});
+      const s = new rive.Rive({
+        src: "./coming.riv",
+        canvas: document.getElementById("footer_Img"),
+        autoplay: true,
+        stateMachines: "State Machine 1",
+        onLoad: () => {
+          s.resizeDrawingSurfaceToCanvas();
+        },
+		});
+	</script>
+	<script>  
+		 const videos = document.querySelectorAll("static")
+		 const imgs = document.querySelectorAll("overlay")
+
+			videos.forEach(video => {
+			  video.addEventListener("mouseover", function () {
+			    this.play();
+			    this.style.opacity="1";
+			  })
+			  
+			  video.addEventListener("mouseout", function () {
+			    this.pause();
+			  })
+			  
+			  video.addEventListener("touchstart", function () {
+			    this.play();
+			  })
+			  
+			  video.addEventListener("touchend", function () {
+			    this.pause();
+			  })
+			});
+		imgs.forEach(imgs => {
+			  video.addEventListener("mouseover", function(){this.style.opacity = "0";
+			})
+		});
+  
+	</script>
+	<script>	
+		const loading = document.querySelector('loading');
+		const cursorRiv = document.getElementById('com');
+		const moveCursor = (e) => {
+			const mouseY = e.clientY;
+			const mouseX = e.clientX;
+		cursorRiv.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
+
+		}
+
+		window.addEventListener('mousemove', moveCursor);
+	</script>
+
+	
+</body>
+</html>
