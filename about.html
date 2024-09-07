@@ -27,8 +27,8 @@
 	<link rel="stylesheet" href="./resources/css/img.css">
 	<link rel="stylesheet" href="./resources/css/project.css">
 	<style type="text/css">
-	#com {}
-	.coming {width:150px; height: auto;}
+	#com {width:150px; height: auto; display: none;}
+	.coming {}
 	</style>
 
 </head>
@@ -43,7 +43,7 @@
 				</div>
 				<div class="menu_btn flex">
 					<div id="loading">
-						<a href="./about.htrml">About</a>
+						<a href="./about.html">About</a>
 					</div>
 					<div>
 						<a href="./project.html">Project</a>
@@ -120,7 +120,7 @@
 		});
       const s = new rive.Rive({
         src: "./coming.riv",
-        canvas: document.getElementById("footer_Img"),
+        canvas: document.getElementById("coming"),
         autoplay: true,
         stateMachines: "State Machine 1",
         onLoad: () => {
@@ -162,8 +162,10 @@
 		const moveCursor = (e) => {
 			const mouseY = e.clientY;
 			const mouseX = e.clientX;
-		cursorRiv.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
-
+		
+		if (loading.mouseIsOver = true) {cursorRiv.style.display = "block";cursorRiv.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;};
+		if (loading.mouseIsOver = false) {cursorRiv.style.display = "none";}
+		
 		}
 
 		loading.addEventListener('mousemove', moveCursor);
