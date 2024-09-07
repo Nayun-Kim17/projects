@@ -163,7 +163,7 @@
 
 	const moveCursor = (e) => {
 			const { pageX, pageY } = e;
-			cursorRiv.style.transform = `translate3d(${pageX}px, ${pageY}px, 0)`;
+			cursorRiv.style.transform = `translate3d(${(pageX - 100)}px, ${(pageY - 50)}px, 0)`;
 		}
 	window.addEventListener('mousemove', moveCursor);
 	</script>
