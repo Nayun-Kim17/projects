@@ -21,6 +21,9 @@
 	    h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
 	  })(document);
 	</script>
+
+	<script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
+
 	<link href="https://cdn.jsdelivr.net/gh/sun-typeface/SUIT@2/fonts/variable/woff2/SUIT-Variable.css" rel="stylesheet">
 	<link rel="stylesheet" href="./resources/css/style.css">
 	<link rel="stylesheet" href="./resources/css/font.css">
@@ -29,17 +32,17 @@
 
 </head>
 <body id="body">
+
 	<nav id="navHead" data-lenis-prevent-wheel>
 		<div class="wrapper flex">
 				<div class="home_btn">
 					<a href="" style="line-height:0;">
-						<canvas id="logo" class="logo">
-						</canvas>
+						<dotlottie-player src="https://lottie.host/d739193d-375f-4fb1-8338-3a472cbb1d83/3ObIyts5IN.json" background="transparent" speed="1"  direction="1" playMode="normal" loop  hover autoplay></dotlottie-player>
 					</a>
 				</div>
 				<div class="menu_btn flex">
-					<div>
-						<a href="./about.htrml">About</a>
+					<div id="loading">
+						<a>About</a>
 					</div>
 					<div>
 						<a href="./project.html">Project</a>
@@ -50,20 +53,30 @@
 				</div>
 		</div>
 	</nav>
-
+	<div id="com" class="com">
+			<canvas width="400" height="200" id="coming" class="coming"></canvas>
+	</div>
 
 	
 
 	<div class="introduction text-big">
-		<p>개인의 마음을 연결짓는 영상을 만듭니다.</p>
+		<p>사람과 사람의 마음을 연결짓는 영상을 만듭니다.</p>
 		<p>Create, Move, Connect</p>
 	</div>
 	<div class="wrap">
 		<div class="item">
+			<a href="./3.html">
+				<img class="overlay"src="./resources/img/3.webp">
+				<video class="static" src="./resources/vid/0.mp4" type="video/mp4" muted loop onmouseover="this.play();" onmouseout="this.pause();"></video>
+				<p class="text-small gray title">Contents Design</p>
+				<p class="bold projectTitle title">Idealogue X IDEA PARTY</p>
+			</a>
+		</div>
+		<div class="item">
 			<a href="./2.html">
 				<img class="overlay"src="./resources/img/2.webp">
 				<video class="static" src="./resources/vid/2.mp4" type="video/mp4" muted loop onmouseover="this.play();" onmouseout="this.pause();"></video>
-				<p class="text-small gray title">Web Design</p>
+				<p class="text-small gray title">축하의 현장과 온라인을 연결하는 꽃다발</p>
 				<p class="bold projectTitle title">Celeblossom</p>
 			</a>
 		</div>
@@ -71,7 +84,7 @@
 			<a href="./1.html">
 				<img class="overlay"src="./resources/img/1.webp">
 				<video class="static" src="./resources/vid/1.mp4" type="video/mp4" muted loop onmouseover="this.play();" onmouseout="this.pause();"></video>
-				<p class="text-small gray title">Youtube Channel Branding</p>
+				<p class="text-small gray title">내가 궁금한 강사와 나누는 솔직한 이야기</p>
 				<p class="bold projectTitle title">강사초대석</p>
 			</a>
 		</div>
@@ -79,7 +92,7 @@
 			<a href="./0.html">
 				<img class="overlay"src="./resources/img/0.webp">
 				<video class="static" src="./resources/vid/0.mp4" type="video/mp4" muted loop onmouseover="this.play();" onmouseout="this.pause();"></video>
-				<p class="text-small gray title">Youtube Channel Branding</p>
+				<p class="text-small gray title">이지나 쌤과 함께라면 나도 입시 전문가</p>
 				<p class="bold projectTitle title">0교시 입시영역</p>
 			</a>
 		</div>
@@ -106,7 +119,15 @@
 		<p class="copywrite">©2024 KIM NAYUN, All rights reserved.</p>
 		
 	</footer>
-	
+	<script type="text/javascript">
+		const canvas = document.getElementById('footer_Img');
+    	const ctx = canvas.getContext('2d');
+    	 function resizeCanvas() {
+      const container = document.getElementById('footer_Interactive');
+      canvas.width = container.offsetWidth;
+      canvas.height = container.offsetHeight;
+}
+	</script>
 <script src="./resources/js/filter.js"></script>
 
 <script src="https://unpkg.com/@rive-app/canvas@2.9.1"></script>
@@ -131,6 +152,15 @@
         stateMachines: "State Machine 1",
         onLoad: () => {
           q.resizeDrawingSurfaceToCanvas();
+        },
+		});
+       const s = new rive.Rive({
+        src: "./coming.riv",
+        canvas: document.getElementById("coming"),
+        autoplay: true,
+        stateMachines: "State Machine 1",
+        onLoad: () => {
+          s.resizeDrawingSurfaceToCanvas();
         },
 		});
 	</script>
@@ -162,7 +192,27 @@
 		});
   
 	</script>
-		 
+	<script>	
+		
+		const loading = document.getElementById('loading');
+		const cursorRiv = document.getElementById('com');
+
+	const moveCursor = (e) => {
+			const { pageX, pageY } = e;
+			const vwCalc = (6 * window.innerWidth) / 100;
+			cursorRiv.style.transform = `translate3d(${(pageX - vwCalc)}px, ${(pageY - (vwCalc))}px, 0)`;
+
+		}
+	function detectBlock(){
+		if (loading.matches(':hover')) {
+				cursorRiv.style.display = "block";
+			} else {
+				cursorRiv.style.display = "none";
+			}
+	}
+	window.addEventListener('mousemove',detectBlock);
+	loading.addEventListener('mousemove', moveCursor);
+	</script>
 
 	
 </body>
